@@ -1,0 +1,36 @@
+type User {
+  id: ID!
+  name: String!
+  following: [User]
+  followers: [User]
+}
+
+type Post {
+  id: ID!
+  author: User!
+  content: String!
+}
+
+input CreateUserInput {
+  name: String
+}
+
+input CreatePostInput {
+  authorId: ID!
+  content: String!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User
+  createPost(input: CreatePostInput!): Post
+  followUser(followerId: ID!, followeeId: ID!): User
+  unfollowUser(followerId: ID!, followeeId: ID!): User
+}
+
+type Query {
+  postsByFollowing(userId: ID!): [Post!]!
+}
+
+type Subscription {
+  postAddedByFollowing(userId: ID!): Post!
+}
