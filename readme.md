@@ -21,7 +21,7 @@ This project is a basic social media application built with Go, GraphQL, and Mon
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/social-media-graphql.git
+   git clone https://github.com/mahdi-eth/social-media-graphql.git
    cd social-media-graphql
    ```
 
